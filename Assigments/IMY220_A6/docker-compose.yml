@@ -1,0 +1,35 @@
+version: '3'
+services:
+  backend:
+    build: ./backend
+    ports:
+     - "5000:5000" 
+    environment:
+      - MONGO_URI=mongodb://mongo_db:27017/posts_db  
+    depends_on:
+      - mongo_db  
+    networks:
+      - app_network
+
+  mongo_db:
+    image: mongo 
+    ports:
+      - "27017:27017" 
+    volumes:
+      - ./data:/data/db 
+      - ./mongo-init:/docker-entrypoint-initdb.d 
+    networks:
+      - app_network
+
+  frontend:
+    build: ./frontend  
+    ports:
+      - "3000:3000" 
+    depends_on:
+      - backend
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
