@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Picnic",
+        "description": "Picnic in the park",
+        "date": "2024/09/11",
+        "validName": true
+    },
+    {
+        "name": "Rock concert",
+        "description": "Rock concert at the football stadium",
+        "date": "2024/09/21",
+        "validName": true
+    },
+    {
+        "name": "Festival",
+        "description": "Summer music festival with a lot of artists performing",
+        "date": "2024/09/14",
+        "validName": true
+    },
+    {
+        "name": "Quiz night @ Bennies",
+        "description": "Quiz night at Bennie's pub",
+        "date": "2024/09/13",
+        "validName": false
+    }
+]
